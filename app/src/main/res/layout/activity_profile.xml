@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+        <android.support.v7.widget.CardView
+            android:id="@+id/detailCard1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/_3sdp">
+            <include layout="@layout/layout_toolbar" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfileImage"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:elevation="@dimen/_2sdp"
+                        android:src="@drawable/user"
+                        android:tint="@color/colorPrimary"
+                        app:civ_border_color="@color/colorWhite"
+                        app:civ_border_width="1dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/ivRegister"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_gravity="start"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@drawable/button_background"
+                        android:text="Edit"/>
+
+                        <Button
+                            android:id="@+id/ivLogout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="end"
+                            android:textColor="@color/red"
+                            android:background="@drawable/button_background"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:text="Logout"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:id="@+id/edtName"
+
+                        android:text="Name"
+                        android:fontFamily="@font/opensanssemibold"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/_22sdp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:id="@+id/edtContactNo"
+                        android:fontFamily="@font/opensansregular"
+                        android:text="+917875880072"/>
+                    <TextView
+                        android:id="@+id/edtAddress1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_gravity="center"
+                        android:drawableStart="@drawable/ic_location_on_black_24dp"
+                        android:text="Bangalore india"
+                        android:fontFamily="@font/opensansregular"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Orders"
+                android:fontFamily="@font/opensansextrabold"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp"/>
+            <FrameLayout
+                android:id="@+id/containerProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/layout_toolbar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <RelativeLayout
+                android:id="@+id/rvMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="1dp"
+                    app:cardUseCompatPadding="true">
+
+                    <android.support.v4.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_20sdp"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/ivProfileImage1"
+                                android:layout_width="@dimen/_65sdp"
+                                android:layout_height="@dimen/_65sdp"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:elevation="@dimen/_2sdp"
+                                android:src="@drawable/user"
+                                app:civ_border_color="@color/colorWhite"
+                                app:civ_border_width="1dp" />
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:contentPadding="@dimen/_1sdp">
+
+                                <TextView
+                                    android:id="@+id/edtName1"
+                                    style="@style/styleEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="false"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:hint="@string/name"
+                                    android:inputType="textPersonName" />
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:contentPadding="@dimen/_1sdp">
+
+                                <TextView
+                                    android:id="@+id/edtEmail"
+                                    style="@style/styleEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="false"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:hint="@string/email"
+                                    android:inputType="textEmailAddress" />
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:contentPadding="@dimen/_1sdp">
+
+                                <TextView
+                                    android:id="@+id/edtContactNo1"
+                                    style="@style/styleEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="false"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:hint="@string/mobileNo"
+                                    android:inputType="phone" />
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:visibility="gone"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:contentPadding="@dimen/_1sdp">
+
+                                <TextView
+                                    android:id="@+id/edtAddress"
+                                    style="@style/styleEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="false"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:hint="@string/mobileNo"
+                                    android:inputType="text" />
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:contentPadding="@dimen/_1sdp">
+
+                                <TextView
+                                    android:id="@+id/edtAddress11"
+                                    style="@style/styleEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:hint="@string/address_line_1"
+                                    android:inputType="text" />
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:contentPadding="@dimen/_1sdp">
+
+                                <TextView
+                                    android:id="@+id/edtAddress2"
+                                    style="@style/styleEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:hint="@string/address_line_2"
+                                    android:inputType="text" />
+                            </android.support.v7.widget.CardView>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="@dimen/_3sdp"
+                                    app:contentPadding="@dimen/_1sdp">
+
+                                    <TextView
+                                        android:id="@+id/edtCity"
+                                        style="@style/styleEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/opensansregular"
+                                        android:hint="@string/city"
+                                        android:inputType="text" />
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="@dimen/_3sdp"
+                                    app:contentPadding="@dimen/_1sdp">
+
+                                    <TextView
+                                        android:id="@+id/edtState"
+                                        style="@style/styleEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/opensansregular"
+                                        android:hint="@string/state"
+                                        android:inputType="text" />
+                                </android.support.v7.widget.CardView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="@dimen/_3sdp"
+                                    app:contentPadding="@dimen/_1sdp">
+
+                                    <TextView
+                                        android:id="@+id/edtCountry"
+                                        style="@style/styleEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/opensansregular"
+                                        android:hint="@string/country"
+                                        android:inputType="text" />
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="@dimen/_3sdp"
+                                    app:contentPadding="@dimen/_1sdp">
+
+                                    <TextView
+                                        android:id="@+id/edtCode"
+                                        style="@style/styleEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/opensansregular"
+                                        android:hint="@string/pin_code"
+                                        android:inputType="number" />
+                                </android.support.v7.widget.CardView>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ivRegister1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:src="@drawable/edit" />
+
+                        </LinearLayout>
+                    </android.support.v4.widget.NestedScrollView>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_alignTop="@id/rvMain"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:elevation="@dimen/_2sdp"
+                android:src="@drawable/profile" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_progressbar" />
+</RelativeLayout>
